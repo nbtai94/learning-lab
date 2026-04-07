@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\angularjs\directives\" />
+    <Folder Include="wwwroot\lib\angularjs\services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\angularjs\app.js" />
+    <None Include="wwwroot\lib\angularjs\controllers\home.controller.js" />
+  </ItemGroup>
+
+</Project>
