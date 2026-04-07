@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/DemoElasticKibana/DemoElasticKibana/obj/Release/net8.0
+/DemoElasticKibana/DemoElasticKibana/obj/Debug/net8.0/DemoElasticKibana.AssemblyInfo.cs
+/DemoElasticKibana/DemoElasticKibana/obj/Debug/net8.0/DemoElasticKibana.AssemblyInfoInputs.cache
+/DemoElasticKibana/DemoElasticKibana/obj/Debug/net8.0/DemoElasticKibana.assets.cache
+/DemoElasticKibana/DemoElasticKibana/obj/Debug/net8.0/DemoElasticKibana.GeneratedMSBuildEditorConfig.editorconfig
