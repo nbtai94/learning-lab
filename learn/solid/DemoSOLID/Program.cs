@@ -43,6 +43,7 @@ namespace DemoSOLID
                 Console.WriteLine("Email invoice");
             }
         }
+        // Open/Closed principle => Class nên mở để mở rộng nhưng đóng để sửa chữa
 
         // Open/Close => Không sửa chữa class củ mà mở rộng bằng cách kế thừa  
         // Ví dụ muốn sửa EmailInvoice thành Send Invoice Confirm
@@ -58,8 +59,7 @@ namespace DemoSOLID
             }
         }
 
-
-        // Liskov => Đối tượng của class con có thể thay thế cho đối tượng của class cha mà không bị lỗi
+        // Livskov Substitution Principle => Nguyên tắc thay thế Liskov => Các đối tượng của lớp con có thể thay thế cho đối tượng của lớp cha mà không làm thay đổi tính đúng đắn của chương trình
 
         public abstract class Bird
         {
@@ -130,8 +130,8 @@ namespace DemoSOLID
             }
         }
 
-        // Interface Segregration => Interface lớn nên tách thành nhiều interface nhỏ với mục đích cụ thể
-        // => Không được bắc buộc class con phải thực thi những phương thức không cần thiết
+        // interface Segregation Principle => Nguyên tắc phân tách interface => Các client không nên bị buộc phải phụ thuộc vào các interface mà họ không sử dụng
+        // interface lớn nên tách thành các interface nhỏ hơn để client chỉ cần phụ thuộc vào những phương thức mà họ thực sự sử dụng
 
         public interface ManagerDevice
         {
@@ -182,9 +182,9 @@ namespace DemoSOLID
                 throw new NotImplementedException();
             }
         }
+        // depedence inversion => Nguyên tắc đảo ngược phụ thuộc => Các module cấp cao không nên phụ thuộc vào các module cấp thấp mà cả 2 nên phụ thuộc vào abstraction (interface hoặc abstract class) => Module cấp cao chỉ cần phụ thuộc vào abstraction mà không cần biết cách thức thực hiện của module cấp thấp
 
-        // Depedence Inversion => Module cấp cao không nên phụ thuộc vào module cấp thấp => cả 2 nên phụ thuộc vào abstraction
-        // Interface không nên phụ thuộc vào chi tiết => mà ngược lại
+        // Module cấp cao => Notification cần phát thông báo nhưng không nên phụ thuộc vào cách thức gửi thông báo
 
         public class Notification
         {
@@ -201,10 +201,13 @@ namespace DemoSOLID
             }
         }
 
+        // interface abstraction => IMessageService không phụ thuộc vào cách thức gửi thông báo mà chỉ định nghĩa phương thức Send
         public interface IMessageService
         {
             void Send(string message);
         }
+
+        // module cấp thấp => MessageService thực hiện cách thức gửi thông báo nhưng không phụ thuộc vào module cấp cao mà chỉ cần thực thi interface IMessageService
         public class MessageService : IMessageService
         {
             public MessageService()
